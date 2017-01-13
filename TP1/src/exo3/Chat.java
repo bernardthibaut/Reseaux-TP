@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Chat {
 
-	final static String ADDRESS = "224.0.0.2";
+	final static String ADDRESS = "224.0.0.1";
 	final static int PORT = 7654;
 
 	public static void main(String[] args) {
