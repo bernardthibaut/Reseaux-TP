@@ -33,8 +33,10 @@ public class ChatWithEncoding {
 						DatagramPacket packet = new DatagramPacket(buf, buf.length);
 						socket.receive(packet);
 						String messageReceived = new String(packet.getData(), 0, packet.getLength());
-						if (!isGoodFormat(messageReceived))
+						if (!isGoodFormat(messageReceived)) {
 							System.err.println("Message received is wrong format");
+							continue;
+						}
 
 						String[] parts = messageReceived.split(":");
 
@@ -66,7 +68,6 @@ public class ChatWithEncoding {
 						byte[] message = input.getBytes();
 						DatagramPacket packet = new DatagramPacket(message, message.length, hostAdress, PORT);
 						socket.send(packet);
-						sc.close();
 					}
 				} catch (IOException e) {
 					e.printStackTrace();
