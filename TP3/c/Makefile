@@ -29,10 +29,10 @@ sendUDP: sendUDP.o
 	${CC} ${LDFLAGS} -o $@ $^
 
 clean:
-	rm *.o || true
+	rm -f *.o || true
 
 realclean: clean
-	rm exemple || true
+	rm -f sendUDP || true
 
 ## Liste des pseudo-cibles
 #  Ces cibles ne correspondent pas à des fichiers que l'on veut créer,
